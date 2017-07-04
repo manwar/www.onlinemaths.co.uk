@@ -1,0 +1,19 @@
+<div id="calwrapper">
+   <div id="calheader"><h1><a href="/classes"">Classes</a>&nbsp;*&nbsp;<a href="/classes/<% class_tag %>"><% class_name %></a>&nbsp;*&nbsp;<a href="/classes/<% class_tag %>/<% category_tag %>"><% category_name %></a>&nbsp;*&nbsp;<a href="/classes/<% class_tag %>/<% category_tag %>/<% sub_category_tag %>"><% sub_category_name %></a>&nbsp;*&nbsp;<a href="/classes/<% class_tag %>/<% category_tag %>/<% sub_category_tag %>/<% paper_tag %>"><% paper_name %></a>&nbsp;*&nbsp;Edit Paper</h1></div>
+
+    <div id="calcontent">
+
+    <% IF error %>
+        <p><b><font color="red">ERROR:<% error %></font></b></p>
+    <% END %>
+
+    <h1><% form_title %></h1>
+    <form method="POST" action="<% form_action %>">
+        <input type="hidden" name="return_url" value="<% return_url %>"/>
+        <textarea name="data" rows="32" cols="190" wrap="soft"><% data %></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    </div>
+
+</div>

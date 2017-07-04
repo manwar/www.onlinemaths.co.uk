@@ -1,0 +1,39 @@
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article>
+            <div class="pad_left1">
+              <h2>My Scores</h2>
+
+
+<table class="container">
+<tr>
+    <th class="head">S. No.</th>
+    <th class="head">Date</th>
+    <th class="head">Category</th>
+    <th class="head">Sub Category</th>
+    <th class="head">Paper</th>
+    <th class="head">Score</th>
+</tr>
+
+<% FOREACH entry IN entries %>
+<tr class="row">
+    <td class="cell"><% entry.s_no %></td>
+    <td class="cell"><% entry.date %></td>
+    <td class="cell"><% entry.category %></td>
+    <td class="cell"><% entry.sub_category %></td>
+    <td class="cell"><% entry.paper %></td>
+    <td class="cell"><% entry.score %></td>
+</tr>
+<% END %>
+
+</table>
+
+                  <% IF prev_page %><a href="<% prev_page %>"><span><span><< Previous</span></span></a><% END %>
+                  &nbsp;&nbsp;
+                  <% IF next_page %><a href="<% next_page %>"><span><span>Next >></span></span></a><% END %>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,58 @@
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad_left1">
+              <h2 class="pad_bot1"><% class_name %></h2>
+            </div>
+            <div class="wrapper pad_bot1">
+              <figure class="left marg_right1">
+              <p class="pad_bot1 pad_top2"><strong><% cat_name %></strong></p>
+              <p> Please follow the link below to practice the different topics.</p>
+            </div>
+            <div class="pad_left1">
+              <div class="box2">
+                <div class="wrapper">
+                  <div class="cols">
+                    <ul class="list3">
+                      <% FOREACH g1 IN group1 %>
+                      <li>
+                          <a href="/classes/<% class_tag %>/<% cat_tag %>/<% g1.tag %>"><% g1.name %><% g1.count %></a>
+                          &nbsp;
+                          <% IF session.is_admin %>
+                          <img title="Add new paper" style="float:none; vertical-align:middle;" src="/images/plus.png" width="10" height="10" onClick="javascript:location.href='/classes/<% class_tag %>/<% cat_tag %>/<% g1.tag %>/add-paper'"/>
+                          <% END %>
+                      </li>
+                      <% END %>
+                    </ul>
+                  </div>
+                  <div class="cols pad_left2">
+                    <ul class="list3">
+                      <% FOREACH g2 IN group2 %>
+                      <li>
+                          <a href="/classes/<% class_tag %>/<% cat_tag %>/<% g2.tag %>"><% g2.name %><% g2.count %></a>
+                          &nbsp;&nbsp;
+                          <% IF session.is_admin %>
+                          <img title="Add new paper" style="float:none; vertical-align:middle;" src="/images/plus.png" width="10" height="10" onClick="javascript:location.href='/classes/<% class_tag %>/<% cat_tag %>/<% g2.tag %>/add-paper'"/>
+                          <% END %>
+                      </li>
+                      <% END %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="col2 pad_left2">
+            <div class="pad_left1">
+              <h2>Categories</h2>
+            </div>
+            <ul class="list1 pad_bot1">
+              <% FOREACH cat IN categories %>
+                 <li><a href="/classes/<% class_tag %>/<% cat.tag %>"><% cat.name %></a></li>
+              <% END %>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>

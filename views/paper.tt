@@ -1,0 +1,126 @@
+<script language="JavaScript">
+<!--
+
+  var numQuestions = <% question_counts %>;
+  var answers = new Array(1);
+
+  <% FOREACH answer IN answers %>
+  answers[<% answer.id %>] = "<% answer.value %>";
+  <% END %>
+
+  var wrongImage = new Image(78,26);
+  wrongImage.src = "<% request.uri_base %>/images/wrong.png";
+  var blankImage = new Image(78,26);
+  blankImage.src = "<% request.uri_base %>/images/blank.jpg";
+
+  function resetScore(form) {
+    var images = document.getElementsByTagName('img');
+    for(var i = 0; i < images.length; i++) {
+       images[i].src = blankImage.src;
+    }
+
+    form.reset();
+  }
+
+  function getScore(form) {
+    var correctAnswers = new Array();
+    var imageNames     = new Array();
+    var inputElements  = form.getElementsByTagName("input");
+    for (var j=1; j <= inputElements.length; j++) {
+       var el = form.elements[j];
+       if (typeof el !== "undefined") {
+          if (el.type == "radio") {
+             var imageName = el.name + "_image";
+             imageNames[imageName] = 1;
+             if (el.checked) {
+                if (el.value == answers[el.name]) {
+                   correctAnswers[imageName] = 1;
+                }
+             }
+          }
+       }
+    }
+
+    var total = 0;
+    for (var k in imageNames) {
+       if (correctAnswers.hasOwnProperty(k)) {
+          document.images[k].src = blankImage.src;
+          total++;
+       }
+       else {
+          document.images[k].src = wrongImage.src;
+       }
+    }
+
+    form.score.value = Math.round(total / numQuestions * 100);
+  }
+
+  function saveScore(form) {
+     getScore(form);
+     form.submit();
+  }
+
+// -->
+</script>
+
+
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad_left1">
+              <h2><% sub_title %></h2>
+
+              <form id="LoginForm" name="math_form" method="post">
+
+    <ol compact type=1>
+      <% FOREACH question IN questions %>
+      <li><b><% question.desc %></b>
+        <img src="<% request.uri_base %>/images/blank.jpg" width=20 height=10 name="<% question.image_name %>" align="top">
+        <br>
+        <% FOREACH choice IN question.choices %>
+        <input type="radio" name="<% choice.choice_name %>" value="<% choice.choice_value %>">
+        <% choice.choice_text %>
+        &nbsp; &nbsp;
+        <% END %>
+      </li>
+      </br>
+      <% END %>
+    </ol>
+
+
+                <div>
+                  <% IF session.is_admin %>
+                  <a class="button" href="/classes/<% class_tag %>/<% cat_tag %>/<% sub_cat_tag %>/<% paper_tag %>/edit-paper">
+                  <span><span>Edit</span></span>
+                  </a>
+                  <% END %>
+                  <a href="javascript:getScore(window.document.forms[0])"   class="button"><span><span>Score</span></span></a>
+                  <% UNLESS session.is_admin %>
+                  <a href="javascript:saveScore(window.document.forms[0])"  class="button"><span><span>Save</span></span></a>
+                  <% END %>
+                  <a href="javascript:resetScore(window.document.forms[0])" class="button"><span><span>Clear</span></span></a>
+                </div>
+
+    <input type="hidden" name="user_id" value="<% user_id %>">
+    <input type="hidden" name="score">
+    <input type="hidden" name="paper_tag" value="<% paper_tag %>">
+
+              </form>
+            </div>
+          </article>
+
+          <article class="col2 pad_left2">
+            <div class="pad_left1">
+              <h2>Categories</h2>
+            </div>
+            <ul class="list1 pad_bot1">
+              <% FOREACH cat IN categories %>
+                 <li><a href="/classes/<% class_tag %>/<% cat.tag %>"><% cat.name %></a></li>
+              <% END %>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>

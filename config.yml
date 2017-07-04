@@ -1,0 +1,15 @@
+appname:  "onlinemaths"
+layout:   "main"
+charset:  "UTF-8"
+session:  Simple
+template: "template_toolkit"
+engines:
+    template:
+        template_toolkit:
+            start_tag: '<%'
+            end_tag: '%>'
+
+plugins:
+    Database:
+       driver: "SQLite"
+       database: "maths.db"

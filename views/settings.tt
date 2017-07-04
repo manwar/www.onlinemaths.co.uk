@@ -1,0 +1,48 @@
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad_left1">
+              <h2><% form_title %></h2>
+              <form id="SettingsForm" method="POST" action="<% form_action %>">
+
+    <input type="hidden" name="return_url" value="<% return_url %>"/>
+    <% IF error %>
+        <p><b><font color="red">ERROR:<% error %></font></b></p>
+    <% END %>
+
+                <div>
+                  <div class="wrapper"> <strong>First Name:</strong>
+                    <div class="bg">
+                      <input type="text" class="input" name="first_name" value="<% first_name %>">
+                    </div>
+                  </div>
+                  <div class="wrapper"> <strong>Last Name:</strong>
+                    <div class="bg">
+                      <input type="text" class="input" name="last_name" value="<% last_name %>">
+                    </div>
+                  </div>
+                  <div class="wrapper"> <strong>User Name:</strong>
+                    <div class="bg">
+                      <input type="text" class="input" name="username" value="<% username  %>">
+                    </div>
+                  </div>
+                  <div  class="wrapper"> <strong>Password:</strong>
+                    <div class="bg">
+                      <input type="password" class="input" name="password">
+                    </div>
+                  </div>
+                  <div  class="wrapper"> <strong>Re-type Password:</strong>
+                    <div class="bg">
+                      <input type="password" class="input" name="password2">
+                    </div>
+                  </div>
+                  <a href="javascript:window.document.forms[0].submit()" class="button"><span><span>Submit</span></span></a>
+                  <a href="javascript:window.document.forms[0].reset()"  class="button"><span><span>Clear</span></span></a>
+                </div>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

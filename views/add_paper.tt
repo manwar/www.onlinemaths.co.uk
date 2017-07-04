@@ -1,0 +1,30 @@
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="col1">
+            <div class="pad_left1">
+              <h2><% form_title %></h2>
+              <form id="LoginForm" method="post">
+
+        <input type="hidden" name="return_url" value="<% return_url %>"/>
+        <% IF error %>
+        <p><b><font color="red">ERROR:<% error %></font></b></p>
+        <% END %>
+
+                <div>
+                  <div class="textarea_box">
+                    <div class="bg">
+                      <textarea name="data" cols="1" rows="1"><% data %></textarea>
+                    </div>
+                  </div>
+
+                  <a href="javascript:window.document.forms[0].submit()" class="button"><span><span>Save</span></span></a>
+                  <a href="javascript:window.document.forms[0].reset()"  class="button"><span><span>Clear</span></span></a>
+
+                </div>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Learn Center</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="<% request.uri_base %>/css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="<% request.uri_base %>/css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="<% request.uri_base %>/css/style.css" type="text/css" media="all">
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery-1.5.2.js" ></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/cufon-yui.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/cufon-replace.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/Molengo_400.font.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/Expletus_Sans_400.font.js"></script>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.js"></script>
+
+<script type="text/javascript">
+jQuery.noConflict();
+
+$(function () {
+    $('#captcha_image').click(function () {
+        $("#captcha_image").attr("src", "<% request.uri_base %>/get_captcha?r="+Math.random());
+    });
+});
+
+</script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="<% request.uri_base %>/javascripts/html5.js"></script>
+<style type="text/css">.bg, .box2{behavior:url("<% request.uri_base %>/javascripts/PIE.htc");}</style>
+<![endif]-->
+</head>
+<body id="page5">
+<div class="body1">
+  <div class="main">
+    <!-- header -->
+    <header>
+      <div class="wrapper">
+        <nav>
+          <ul id="menu">
+            <li><a href="/">Home</a></li>
+            <% IF session.username %>
+            <li><a href="/classes">Courses</a></li>
+            <% IF session.is_admin %><&nbsp;<% ELSE %><li><a href="/scores">Scores</a></li><% END %>
+            <li><a href="/rank">Rank</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <% IF session.is_admin %><li><a href="/passwords">Passwords</a></li><% END %>
+            <li class="end"><a href="/logout">Logout (<% session.username %>)</a></li>
+            <% ELSE %>
+            <li><a href="/login">Log In</a></li>
+            <li class="end"><a href="/register">Register</a></li>
+            <% END %>
+          </ul>
+        </nav>
+      </div>
+      <div class="wrapper">
+        <h1><a href="/" id="logo">Learn Center</a></h1>
+      </div>
+      <div id="slogan"> We Will Open The World<span>of math for you!</span> </div>
+    </header>
+    <!-- / header -->
+  </div>
+</div>
+<div class="body2">
+  <div class="main">
+
+    <% content %>
+
+    <!-- content -->
+    <!-- footer -->
+    <footer>
+      <div class="wrapper">
+        <div class="pad1">
+          <div class="pad_left1">
+            <div class="wrapper">
+              <article class="call"> <span class="call1">Contact: </span><span class="call2">mohammad.anwar@yahoo.com</span> </article>
+              <article class="col_4 pad_left2">Copyright &copy; <a href="http://www.manwar.org">www.manwar.org</a><br>
+                Design by <a target="_blank" href="http://www.templatemonster.com/">TemplateMonster.com</a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / footer -->
+  </div>
+</div>
+<script type="text/javascript">Cufon.now();</script>
+</body>
+</html>

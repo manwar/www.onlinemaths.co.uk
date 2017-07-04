@@ -1,0 +1,54 @@
+{
+    "entries": [
+        { "id": 1,
+          "desc": "Counting in 4s, what would be next 20,24,__ ?",
+          "answer": "d",
+          "choices": [ 30, 26, 29, 28 ]
+        },
+        { "id": 2,
+          "desc": "Counting in 8s, what would be next 24,32__ ?",
+          "answer": "c",
+          "choices": [ 30, 36, 40, 48 ]
+        },
+        { "id": 3,
+          "desc": "Counting in 50s, what would be next 100,150,__ ?",
+          "answer": "d",
+          "choices": [ 300, 250, 350, 200 ]
+        },
+        { "id": 4,
+          "desc": "Counting in 4s, what would be next 12,16,__ ?",
+          "answer": "c",
+          "choices": [ 32, 24, 20, 28 ]
+        },
+        { "id": 5,
+          "desc": "Counting in 8s, what would be next 40,48,__ ?",
+          "answer": "b",
+          "choices": [ 32, 56, 64, 72 ]
+        },
+        { "id": 6,
+          "desc": "Counting in 50s, what would be next 50,100,__ ?",
+          "answer": "a",
+          "choices": [ 150, 200, 250, 300 ]
+        },
+        { "id": 7,
+          "desc": "Counting in 4s, what would be next 52,56,__ ?",
+          "answer": "c",
+          "choices": [ 62, 58, 60, 64 ]
+        },
+        { "id": 8,
+          "desc": "Counting in 8s, what would be next 60,68,__ ?",
+          "answer": "a",
+          "choices": [ 76, 72, 80, 70 ]
+        },
+        { "id": 9,
+          "desc": "Counting in 50s, what would be next 10,60,__ ?",
+          "answer": "d",
+          "choices": [ 120, 80, 90, 110 ]
+        },
+        { "id": 10,
+          "desc": "Counting in 4s, what would be next 92,96,__ ?",
+          "answer": "b",
+          "choices": [ 110, 100, 120, 116 ]
+        }
+    ]
+}

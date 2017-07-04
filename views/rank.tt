@@ -1,0 +1,31 @@
+    <section id="content">
+      <div class="box1">
+        <div class="wrapper">
+          <article class="largecol">
+            <div class="pad_left1">
+              <h2>Leader Board</h2>
+
+<table class="container" border=1>
+<tr>
+    <th class="head">Rank</th>
+    <th class="head">Name</th>
+    <th class="head">Activities Count</th>
+    <th class="head">Average Score</th>
+</tr>
+
+<% FOREACH user IN entries %>
+<tr class="row">
+    <td class="cell"><% user.rank %></td>
+    <td class="cell"><% user.name %></td>
+    <td class="cell"><% user.activities_count %></td>
+    <td class="cell"><% user.average_score %></td>
+</tr>
+<% END %>
+
+</table>
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

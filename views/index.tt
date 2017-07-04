@@ -1,0 +1,34 @@
+<section id="content">
+      <div class="box1">
+        <div class="wrapper">
+
+          <article class="col1">
+
+            <div class="pad_left1"></div>
+
+            <div class="wrapper pad_bot2">
+              <p class="pad_bot1 pad_top2">
+              <p class="quot" style="text-align: justify">
+              <span><strong><a href="http://www.manwar.org">Mohammad S Anwar</a></strong></span>
+              <span class="color1">Web Administrator</span>
+              <br>
+
+              This website is dedicated to my beautiful daughter, <strong>Aairah</strong> and all her friends.
+              <br><br>
+              It's still undergoing design changes. However the core functions i.e. practice various topics of <strong>Year 3</strong> math is finished. I still need to add practice paper for some of the topics. Currently it only has support for text based questions.
+              <br><br>
+              I am going to add very soon graphics based questions support for topics like <strong>"Properties of Shapes"</strong>. Suggestions are most welcome.
+
+          </article>
+
+          <article class="col2 pad_left2">
+            <div class="pad_left1"><h2>Latest News</h2></div>
+            <ul class="list1">
+            <li> Launching the site on 23rd Apr 2017.</li>
+            </ul>
+            <div class="pad_left1"></div>
+          </article>
+
+        </div>
+      </div>
+</section>
