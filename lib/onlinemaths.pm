@@ -612,7 +612,7 @@ sub get_scores {
     my $scores  = {};
     my $attempt = {};
     foreach my $activity (@activities) {
-        $scores->{$activity->{user_id}}  += $activity->{score};
+        $scores->{$activity->{user_id}}  += $activity->{score} || 0;
         $attempt->{$activity->{user_id}} += 1;
     }
 
